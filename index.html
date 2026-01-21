@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Pop-up Boxes and Functions</title>
+</head>
+<body>
+
+    <h2>JavaScript Program Using Pop-ups</h2>
+
+    <!-- Display Date Section -->
+    <label>Current Date:</label>
+    <input type="text" id="dateBox" readonly>
+    <br><br>
+    <button onclick="displayDate()">Display Date</button>
+
+    <br><br><hr><br>
+
+    <!-- Factorial Section -->
+    <button onclick="findFactorial()">Find Factorial</button>
+
+    <script>
+        // Function to display current date in textbox
+        function displayDate() {
+            let today = new Date();
+            document.getElementById("dateBox").value = today;
+        }
+
+        // Function to calculate factorial using prompt and alert
+        function findFactorial() {
+            let n = prompt("Enter a number:");
+
+            if (n === null || n === "" || n < 0) {
+                alert("Please enter a valid non-negative number");
+                return;
+            }
+
+            let fact = 1;
+            for (let i = 1; i <= n; i++) {
+                fact = fact * i;
+            }
+
+            alert("Factorial of " + n + " is: " + fact);
+        }
+    </script>
+
+</body>
+</html>
